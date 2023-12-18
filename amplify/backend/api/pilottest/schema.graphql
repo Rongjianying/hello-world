@@ -1,0 +1,20 @@
+enum Plaform {
+  TVP
+  STRATA
+  BEESWEX
+}
+
+enum ProjectStatus {
+  ACTIVE
+  INACTIVE
+}
+
+type Project @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  description: String
+  platform: Plaform
+  status: ProjectStatus
+  published_date: AWSDate
+  expirated_date: AWSDate
+}
